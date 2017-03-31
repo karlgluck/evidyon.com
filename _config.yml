@@ -1,0 +1,46 @@
+title: Evidyon
+greeting: Inside the 3d open-source fantasy MORPG by Karl Gluck, Erich Gluck and Joe Muller
+description: 
+github:  karlgluck/evidyon
+favicon: favicon.ico
+
+# Build settings
+paginate: 3
+baseurl: "" # the subpath of your site, e.g. /blog/
+#url: "http://www.evidyon.com" # the base hostname & protocol for your site
+url: ""
+highlights: pygments
+permalink: posts/:title/
+include: ["_pages"]
+gems: [jekyll-paginate]
+markdown: kramdown
+excerpt_separator: "<!--more-->"
+sass:
+    sass_dir: _sass
+    style: compressed
+
+# cover images are expected to be 900px by 240px, or at least 15:4 aspect ratio
+# thumbnails look best with 3:1 or 5:2 ratios in this layout.
+defaults:
+    -
+        scope:
+            path: ""
+        values:
+            author: "Karl Gluck"
+            layout: "default"
+    -
+        scope:
+            path: ""
+            type: "posts"
+        values:
+            author: "Karl Gluck"
+            cover: "/media/header.png"
+            layout: "post"
+    -
+        scope:
+            path: ""
+            type: "pages"
+        values:
+            author: "Karl Gluck"
+            cover: "/media/header.png"
+            layout: "default"

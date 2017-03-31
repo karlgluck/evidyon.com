@@ -1,0 +1,34 @@
+---
+layout: default
+title: Home
+---
+
+{% assign tmp = "/" | append: site.baseurl %}
+{% if page.url == tmp or page.url == "/" %}
+    <article>
+        <h1 class="top-text">Welcome to the Evidyon developers blog!</h1>
+        
+            <p>Evidyon is an open-source (MIT License) online role-playing game developed by Karl Gluck, Erich Gluck and Joe Muller from 2001-2010. You can <a href="http://www.github.com/karlgluck/evidyon">get the full game's source code and media on GitHub</a>. This blog is an archive at this point, but who knows--one day, we might come back!</p>
+			
+			<p>In this website, you can read about how we made a 3d Multiplayer Online Role-Playing Game (MORPG) in our spare time during college, and get a free copy of the entire project for yourself.</p>
+
+            <p>My name is Karl Gluck, and I’m the programmer behind 130 thousand lines of code that run this game.  You’ll see my brother Erich posting as well–he taught himself to model, texture and animate 3d character models with FragMotion.  Joe Muller, the third primary contributor and our longtime friend, may also drop by to talk about game design challenges and give his perspective on how the project evolved over the years.</p>
+
+            <p>Having been in development for so long, there are many, many people to thank so be sure to check out <a href="/acknowledgements/">the full list of acknowledgments</a>.</p>
+
+            <p><strong>So why are we giving all this away for free?</strong></p>
+
+            <p>We have realized our dream of developing a video game and it’s time to move on with other projects–like graduating and finding a job!  However, I’m not content to let this project collect dust.</p>
+
+            <p>Producing Evidyon was a long and difficult journey largely due to the lack of clear, complete and functional examples available to hobby game developers.  I ran into a lot of situations where tutorials on what I was trying to do were incomplete, outdated, or simply did not exist.  By releasing this game in its entirety, I hope to save other game developers the weeks and weeks of frustration I went through figuring all this out for myself.</p>
+
+            <p>Furthermore, Evidyon is a fun, working game!  I hope that passion (and perhaps more free-time) will let you be able to take what I’ve done and extend it in your own way.  If you’re interested in a specific use of Evidyon, such as for a class project, or just want to let me know what you’re doing with it, I’d love to hear from you.</p>
+
+    </article>
+    <div class="divider"></div>
+    <h1 class="top-text">Most Recent Posts</h1>
+    {% include postlist.html %}
+{% else %}
+    <h1 class="top-text">More Posts</h1>
+    {% include postlist.html %}
+{% endif %}
