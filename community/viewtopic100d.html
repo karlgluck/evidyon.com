@@ -1,0 +1,656 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=9&t=695&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2015 00:44:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+<title>Unseen Studios &bull; View topic - Weapon/Armor: *No Re-Moddeling or New Moddeling Required*</title>
+
+<link href="./styles/prosilver/theme/print.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Unseen Studios</h1>
+		<p>Game Development and More<br /><a href="http://unseenstudios.com/community/">http://unseenstudios.com/community/</a></p>
+		
+		<h2>Weapon/Armor: *No Re-Moddeling or New Moddeling Required*</h2>
+		<p><a href="http://unseenstudios.com/community/viewtopic.php?f=9&amp;t=695">http://unseenstudios.com/community/viewtopic.php?f=9&amp;t=695</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Weapon/Armor: *No Re-Moddeling or New Moddeling Required*</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Jul 22, 2007 4:32 pm</strong></div>
+				<div class="author">by <strong>Richard. UK</strong></div>
+				<div class="content">Hey people please bear with me as i have alot to say but finding it hard through text here goes. <img src="./images/smilies/icon_smile.gif" alt=":)" title="Smile" /> <img src="./images/smilies/icon_smile.gif" alt=":)" title="Smile" /> <img src="./images/smilies/icon_smile.gif" alt=":)" title="Smile" />
+<br />
+<br />Reflex 22/07/07 21:46 - I thought that maybe, instead of having to remodel items, or input new items from the beggining of Volucris it may take some time so heres a few thoughts. I came to the conclusion that maybe the first items in game or any item in game could be used but have different stats involved for different levels of that item, different levels could result in distinguishin them by re colouring them or discolouring them ect with corresponding weapon or armor's level of power. 
+<br />
+<br />For example: A sword standard is a normal sword with normal damage, 
+<br />                    a level 1 sword (sword +1) is (discoloured) with added damage on the stats; and higher characters stat requirement, 
+<br />                    a level 2 sword (sword +2) is a different shade again with even more damage and a higher requirement of stat i.e strength agility etc up to any level item of creators choice.
+<br />
+<br />This will give stats an actual meaning to them; plotting what you will require for certain items you pick up and give the creators the ability to use say 4 weapons like Axe Sword Mace and Rapier and turn them into a mass of items (+level) say sword, sword +1, sword +2, sword +3 being distinguished with a distinctive color per level, however as you pick up higher level items the requirements for your character will increase also. Here is my simple solution/formula for creating item(+level)
+<br />
+<br />For Example:
+<br />
+<br />Follow these steps to produce the perfect formula for Item Levels.
+<br />
+<br />NOTE: Collumn '#' is the formula used.
+<br />NOTE: Collumn 'Min' is the Minimum damage.
+<br />NOTE: Collumn 'Max' is the Maximum damage.
+<br />
+<br /> &lt;HTML&gt;
+<br />&lt;body&gt;
+<br />
+<br />&lt;table&gt;
+<br /> &lt;col&gt;
+<br /> &lt;col&gt;
+<br /> &lt;col&gt;
+<br /> &lt;col&gt;
+<br /> &lt;col&gt;
+<br /> &lt;col&gt;
+<br /> &lt;col&gt;
+<br /> &lt;col&gt;
+<br /> &lt;col&gt;
+<br /> &lt;col&gt;
+<br /> &lt;col&gt;
+<br /> &lt;col&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;Item&lt;/td&gt;
+<br />  &lt;td&gt;Level&lt;/td&gt;
+<br />  &lt;td&gt;Min&lt;/td&gt;
+<br />  &lt;td&gt;#&lt;/td&gt;
+<br />  &lt;td&gt;Max&lt;/td&gt;
+<br />  &lt;td&gt;#&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;Sword&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;3&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;6&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;3&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;8&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;3&lt;/td&gt;
+<br />  &lt;td&gt;4&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;8&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;4&lt;/td&gt;
+<br />  &lt;td&gt;5&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;9&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;5&lt;/td&gt;
+<br />  &lt;td&gt;5&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;10&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;6&lt;/td&gt;
+<br />  &lt;td&gt;5&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;11&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;5&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;12&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;8&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;13&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;9&lt;/td&gt;
+<br />  &lt;td&gt;8&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;14&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;10&lt;/td&gt;
+<br />  &lt;td&gt;10&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;15&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;Item&lt;/td&gt;
+<br />  &lt;td&gt;Level&lt;/td&gt;
+<br />  &lt;td&gt;Min&lt;/td&gt;
+<br />  &lt;td&gt;#&lt;/td&gt;
+<br />  &lt;td&gt;Max&lt;/td&gt;
+<br />  &lt;td&gt;#&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;Mace&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;5&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;12&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;5&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;14&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;3&lt;/td&gt;
+<br />  &lt;td&gt;6&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;14&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;4&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;15&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;5&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;16&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;6&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;17&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;18&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;8&lt;/td&gt;
+<br />  &lt;td&gt;9&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;19&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;9&lt;/td&gt;
+<br />  &lt;td&gt;10&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;20&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;10&lt;/td&gt;
+<br />  &lt;td&gt;12&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;21&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;Item&lt;/td&gt;
+<br />  &lt;td&gt;Level&lt;/td&gt;
+<br />  &lt;td&gt;Min&lt;/td&gt;
+<br />  &lt;td&gt;#&lt;/td&gt;
+<br />  &lt;td&gt;Max&lt;/td&gt;
+<br />  &lt;td&gt;#&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;Rapier&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;5&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;16&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;5&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;18&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;3&lt;/td&gt;
+<br />  &lt;td&gt;6&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;18&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;4&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;19&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;5&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;20&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;6&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;21&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;22&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;8&lt;/td&gt;
+<br />  &lt;td&gt;9&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;23&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;9&lt;/td&gt;
+<br />  &lt;td&gt;10&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;24&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;10&lt;/td&gt;
+<br />  &lt;td&gt;12&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;25&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;Item&lt;/td&gt;
+<br />  &lt;td&gt;Level&lt;/td&gt;
+<br />  &lt;td&gt;Min&lt;/td&gt;
+<br />  &lt;td&gt;#&lt;/td&gt;
+<br />  &lt;td&gt;Max&lt;/td&gt;
+<br />  &lt;td&gt;#&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;Axe&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;8&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;19&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;8&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;21&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;3&lt;/td&gt;
+<br />  &lt;td&gt;9&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;21&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;4&lt;/td&gt;
+<br />  &lt;td&gt;10&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;22&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;5&lt;/td&gt;
+<br />  &lt;td&gt;10&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;23&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;6&lt;/td&gt;
+<br />  &lt;td&gt;10&lt;/td&gt;
+<br />  &lt;td&gt;0&lt;/td&gt;
+<br />  &lt;td&gt;24&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;7&lt;/td&gt;
+<br />  &lt;td&gt;10&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;25&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;8&lt;/td&gt;
+<br />  &lt;td&gt;12&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;26&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;9&lt;/td&gt;
+<br />  &lt;td&gt;13&lt;/td&gt;
+<br />  &lt;td&gt;2&lt;/td&gt;
+<br />  &lt;td&gt;27&lt;/td&gt;
+<br />  &lt;td&gt;1&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;10&lt;/td&gt;
+<br />  &lt;td&gt;15&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;28&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;if&gt;
+<br /> &lt;tr&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br />  &lt;td&gt;&lt;/td&gt;
+<br /> &lt;/tr&gt;
+<br /> &lt;endif&gt;
+<br />&lt;/table&gt;
+<br />
+<br />&lt;/body&gt;
+<br />
+<br />&lt;/html&gt;
+<br />
+<br />
+<br />
+<br />1. Now create an Excel sheet simply inputting all of that data.
+<br />2. Create the formula, we remove the level 2 minimum damage and type in that box.
+<br />3. Type: =SUM (Cell of Min Level 1)+(formula # next to Level 1 Min)
+<br />4. So we have:  =SUM 8+0
+<br />5. Then replicate this formula to the 9th level.
+<br />
+<br />Finally, the Level 1 Min number should be editable as this does not have any formula in it. This way you can create your own values for minimum and maximum damages. feel free to colour code your tables so you know which are editable and which are not.
+<br />
+<br />Im sorry for the crappy code... havingalot of trouble gettin tables into my posts, havnt got a great knowledge of HTLM, dont laugh! <img src="./images/smilies/icon_smile.gif" alt=":)" title="Smile" />
+<br />
+<br />Any thoughts?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Jul 22, 2007 5:02 pm</strong></div>
+				<div class="author">by <strong>Vitriol</strong></div>
+				<div class="content">I see what he is saying here. He is using an item level system to diversify weapons so that not every sword is the same as every other sword with equal properties.  We could add this as an attribute to the item. Maybe this mystic sword deals slightly more damage than that one.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Yes</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Jul 22, 2007 5:11 pm</strong></div>
+				<div class="author">by <strong>Richard. UK</strong></div>
+				<div class="content">Precisely,
+<br />
+<br />Every item in game wether it is Armor or Weapon will look different and distinctive from every other. Every character will have their own unique appearance with the differciating colours of Item's(+level) and this does not affect the actual special properties of the items, as it is purely an item replicated several times with a different appearance, different base attributes and requirements.</div>
+			</div>
+			<hr />
+			</div>
+
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+	the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+	"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+	forums may be affected.
+
+	The phpBB Group : 2006
+//-->
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 6 hours <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB &copy; 2000, 2002, 2005, 2007 phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=9&t=695&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2015 00:44:11 GMT -->
+</html>

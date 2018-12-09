@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=32&t=1120&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2015 00:00:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+<title>Unseen Studios &bull; View topic - i think i found the lag problem</title>
+
+<link href="styles/prosilver/theme/print.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Unseen Studios</h1>
+		<p>Game Development and More<br /><a href="index.html">http://unseenstudios.com/community/</a></p>
+		
+		<h2>i think i found the lag problem</h2>
+		<p><a href="viewtopic68a7.html">http://unseenstudios.com/community/viewtopic.php?f=32&amp;t=1120</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>i think i found the lag problem</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Sep 25, 2008 3:12 am</strong></div>
+				<div class="author">by <strong>ascent</strong></div>
+				<div class="content">some testing this morning, i decided to coutnt monsters until i lagged, i ended up getting to 27 then the number started goin down<br /><br />yet once i left screen n walked back, there were all 27, so l believe that lag is due to monsters appearing to the server and not to the player (basically its from to many polys on screen at once for the client to handle)</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: i think i found the lag problem</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Sep 25, 2008 10:26 am</strong></div>
+				<div class="author">by <strong>Sankt Pauli</strong></div>
+				<div class="content">It <span style="font-style: italic">could</span> be the polycount but that would mean the 'lag' gets produced client-side and not server-side since i don't think the server draws any graphical content &quot;on itself&quot;.<br />I don't think the lag derives from graphical issues on the clients pc though, because the monsters are actually still moving smoothly on-screen, the own character just doesn't respond. I think karl said it had to do with the way how monsters spawn, i don't really remember that though.<br /><br />Overall the lag-problem has become MUCH better though, especially if you consider the pretty much insane spawn that you can find (i found a place with basically instant spawn, only novice and apprentice skellys but the xp is pretty awesome).</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: i think i found the lag problem</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Sep 25, 2008 3:23 pm</strong></div>
+				<div class="author">by <strong>ascent</strong></div>
+				<div class="content">well the reason i say its because of the poly's is because last night i showed karl of a spot with massivly overspawned monstrosities (there was literally hundreds) and you could only see like 15 of them tops, then youd kill them and more would pop up on ur screen (if you could kill them lol) and youd stop moving no matter what lol karl was like &quot;OMG WTF&quot; so yea, and i never meant its server side lag, because i knwo its client side, but the only thing i havnt figured, sometimes itll lag when theres only 1 monster on my screen, causing me to die from 1 troll -.- not very fun... but thats only rarely so i honestly dont know<br /><br /><br />and server sided lag would mean monsters would lag too (if u remember in xen) in xen when server lagged bad, so did the monsters, but when u got client lag, the monsters didnt lag at all, so i assume it would be the same concept over here, (or pretty much any game)</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: i think i found the lag problem</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Sep 25, 2008 7:36 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">So I did some more code profiling and found the source of a &quot;jitter&quot;.  I'm using this term instead of &quot;lag&quot; here because lag to me means a delay during which changes you make on the client aren't reflected on the server--the client is running fine (characters animating and whatnot), but nothing changing/responding.  A &quot;jitter&quot; however is a complete client-side lock up for a short amount of time while something happens.  I've found the latter.<br /><br />The problem is when the client loads a new section of the map.  When loading the map, the client builds up the geometry for that section and makes a lot of allocations--I found that loading a new segment took around 0.16 seconds, or the equivalent of ~10 frames of rendering--which is very noticeable!  Compound that with the fact that everything on screen will &quot;jump&quot; during this time, that makes for quite a jolt.  I'm working on &quot;sliding&quot; in new sections of the map little-by-little so that it doesn't have such a drastic effect.<br /><br /><br /><br />That said, the responsiveness problem you're having (and I've encountered, though very rarely) seems also to be client-side.  I think it has to do with the input subsystem choking during a jitter.  A whole bunch of messages flood in (a normal app can get a few hundred every second if the mouse is moving) and a buffer somewhere fills up, then starts just dropping new input instead of handling it.  I'm thinking that switching to a different kind of input processing will fix this, but that's a challenge for later.<br /><br />The jist is, there's a way to tell what the error is--but I have to get the error to happen first and  as I mentioned, it rarely ever happens on my system.  So when 1.10 comes out, remind me to describe to you how to find it.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: i think i found the lag problem</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Sep 25, 2008 8:24 pm</strong></div>
+				<div class="author">by <strong>ascent</strong></div>
+				<div class="content">well karl i can show you the exact spots where i normally get it (theres roughley 3 or 4 spots where i ALWAYS get a jitteR) also with the inputing becoming nonresponcive during a jitter, other things that dont work when a jitter occurs, clicking, (of course any thing that is keyed) and talking all do not work, but i'd like to know, since i didnt fully udnerstand your post, was i on the right track with my findings? (btw the jitters happen more with Trolls, Monstrosityes &lt;-- cuz their bigger and with experts/masters &lt;--cuz theres so darn many)<br /><br /><br />one way i prevent this problem (personally) is when i know i'm coming up on alot of monsters, i take baby steps, only taking 1-5 monsters at a time, trying to get as little as possible</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: i think i found the lag problem</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Sep 25, 2008 8:46 pm</strong></div>
+				<div class="author">by <strong>Burnt Ferret</strong></div>
+				<div class="content">I only get this &quot;jitter&quot; or &quot;lag&quot; when i have something such as a video i'm not watching open in the background.  Very rarely have I experienced this when there was nothing running in the background, but yes, it is always when there are at least 15 monsters on the same page.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: i think i found the lag problem</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Sep 25, 2008 9:05 pm</strong></div>
+				<div class="author">by <strong>ascent</strong></div>
+				<div class="content">it may also be due to the ammount your CPU can handle, i've yet to try evidyon on my laptop cuz i dont have wireless yet (i get it in a fw weeks w00000t)</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: i think i found the lag problem</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Sep 26, 2008 6:52 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content"><blockquote><div><cite>ascent wrote:</cite>well karl i can show you the exact spots where i normally get it (theres roughley 3 or 4 spots where i ALWAYS get a jitteR)</div></blockquote><br /><br /><br />next time you see me online, show me where</div>
+			</div>
+			<hr />
+			</div>
+
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+	the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+	"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+	forums may be affected.
+
+	The phpBB Group : 2006
+//-->
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 6 hours <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB &copy; 2000, 2002, 2005, 2007 phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=32&t=1120&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2015 00:00:18 GMT -->
+</html>

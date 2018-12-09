@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=9&t=771&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2015 00:44:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+<title>Unseen Studios &bull; View topic - Working on the world map</title>
+
+<link href="./styles/prosilver/theme/print.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Unseen Studios</h1>
+		<p>Game Development and More<br /><a href="http://unseenstudios.com/community/">http://unseenstudios.com/community/</a></p>
+		
+		<h2>Working on the world map</h2>
+		<p><a href="http://unseenstudios.com/community/viewtopic.php?f=9&amp;t=771">http://unseenstudios.com/community/viewtopic.php?f=9&amp;t=771</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Working on the world map</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 18, 2007 1:38 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">I'm trying to get the mapping stuff done this week for Volucris.  It's taking a while because I'm thinking really hard about how best to do this.  I want to support a very large (and expandable) terrain, but I don't want the download to be huge.  Also, it needs to fit on your computer!  As such I don't think it's a great idea just to store data for every single point on the map--there has to be some sort of optimization involved.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>target size</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 19, 2007 12:34 am</strong></div>
+				<div class="author">by <strong>Ratiotile</strong></div>
+				<div class="content">How big do you want the world map to be? 
+<br />I estimate that the biggest map that could be made without significant optimization is on the order of 10,000 by 10,000. As the world map can be represented by a bitmap, you would need more than 100,000,000 bits to represent it uncompressed. If we assume that each square can be represented with a byte of data, we have the 10,000^2 map occupying 100MB of disk space.
+<br />
+<br />Further using the bitmap analogy, top lossless image compression standards can reduce filesize by up to 80%. If we were to use some sort of compression algorithm to reduce the size of the world map, the 10,000^2 map can be reduced to 20MB of disk space. 
+<br />
+<br />Just how big is the Xen map? Correct me if I'm wrong, but off top of my head, I'd estimate that you can fit the Xenimus old world onto a 2000^2 map.
+<br />
+<br />Is a 10,000^2 square world map large enough, or do you envision something larger?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 19, 2007 8:29 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">A 10000 square map is certainly big enough, and using the PNG compression algorithm can significantly reduce the size, but the problem is the number of layers that need to be represented:
+<br />
+<br />Ground texture (at least 256 of these)
+<br />Navigability (solid/transportable wall/swim/fly-over wall, trigger wall)
+<br />Spawn points
+<br />Scenery elements
+<br />Map triggers
+<br />Tile height (short/medium/high wall, no wall, pit)
+<br />Special effects (poison cloud)
+<br />Status effects  (slide, poison, etc.)</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 19, 2007 12:31 pm</strong></div>
+				<div class="author">by <strong>mongatard</strong></div>
+				<div class="content">Are you trying to fit all of that information, such as object location, spawn points, textures, into one file? Wouldn't it simplify it to have the ground textures/types in one image file, and have the software add properties to the ground type such as poison or slow. Then also have a seperate file containing the coordinates of objects in the game?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 19, 2007 2:17 pm</strong></div>
+				<div class="author">by <strong>Ratiotile</strong></div>
+				<div class="content">You could have two separate files, and on a map of this size you could save some space in exchange for more processing required.
+<br />
+<br />Have all the per-tile properties in one &quot;terrain&quot; file.
+<br />8 bits for texture, 
+<br />4 bits for navigability+tile height
+<br />
+<br />And then put the sparse elements in another file.
+<br />a pair of 16-bit integers for location,
+<br />and say 8 bits to determine what special effects are active,
+<br />32 bits for properties of each effect.
+<br />Space is not critical in this file, as it does not cover every tile.
+<br />
+<br />Using this outline there will be a terrain file that is 50% larger than the previous estimate, putting it at about 150MB, 30MB with compression. There is also a relatively small &quot;doodad&quot; file describing all sparse map elements( trigger points, scenery, special effects) that I expect won't exceed 15MB uncompressed.
+<br />
+<br />The two file system will save 1 bit per tile verses having everything in a single file, so thats about 100,000,000 bits...
+<br />However, the advantage of 1 file is that you won't have to read the &quot;doodad&quot; file then lookup where to place the elements, or calculate position again when players move, so I think it'd be faster.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 19, 2007 6:59 pm</strong></div>
+				<div class="author">by <strong>ziggman</strong></div>
+				<div class="content">are we still using my 5000 x 5000 map or no?
+<br />
+<br />i would like to know if Ratiotile is taking this over?? If i should continue to work on my map?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 19, 2007 7:19 pm</strong></div>
+				<div class="author">by <strong>Ratiotile</strong></div>
+				<div class="content">No, keep working on your map. I was just discussing ways to store the map within a file and our maximum map size. If the world map is 5000 x 5000 then there won't be any problems with storage.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 20, 2007 4:51 pm</strong></div>
+				<div class="author">by <strong>ziggman</strong></div>
+				<div class="content">saved as PNG format the map is only 542k im not sure if all the textures will be saved as PNG as well but it would save alot of space if they were</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 20, 2007 8:45 pm</strong></div>
+				<div class="author">by <strong>thadiusofx3</strong></div>
+				<div class="content">yes the textures are png as well</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 20, 2007 9:39 pm</strong></div>
+				<div class="author">by <strong>Ratiotile</strong></div>
+				<div class="content">I've thought of a way to save a lot of space on map representation. Instead of representing every square on the map, you can have a default terrain type that is automatically assumed. Then you only have to specify the spaces that are different. Since you won't have one type of terrain dominate the entire map (even xenimus isn't grasslands everywhere), you can break up the map into separate regions and specify the base terrain for each region. This would help reduce client software requirements as well, because they wouldn't need to load the entire world into memory, just their region and any adjacent ones.
+<br />
+<br />To illustrate this, I've drawn a picture of a map:
+<br /><a href="http://img339.imageshack.us/my.php?image=mapexampleba7.png" class="postlink"><img src="http://img339.imageshack.us/img339/5060/mapexampleba7.th.png" alt="Image" /></a>
+<br />
+<br />Areas A,B, and C are &quot;grasslands&quot; dominated.
+<br />For areas D and E, you could specify a forest base terrain, perhaps pine needles.
+<br />Areas G, F, and H would be dirt in Xenimus, however we could have separate desert, rocky, and lava tilesets.
+<br />The inside of the castle in area H would be defined with an interior &quot;stone corridor&quot; tile.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Dec 21, 2007 8:13 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Even with a default terrain type, you still have to specify something (even if its a zero) in the map, unless you're doing a sparse representation.  In any case, to make the ground look interesting at all you have to randomize the ground texture a bit so a sparse representation wouldn't save all that much information--in fact, it might inflate the data slightly.
+<br />
+<br />Anyway, I'm just going to do this the old-fashioned way and store each spot of information individually in the editor, then do some sort of interesting compression on it when it's saved.  I'll just make the terrain code modular enough that I can gut it and rewrite the internals later.  Too much time is being spent on this and I think PV needs to work at all before we plan on it getting that big.</div>
+			</div>
+			<hr />
+			</div>
+
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+	the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+	"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+	forums may be affected.
+
+	The phpBB Group : 2006
+//-->
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 6 hours <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB &copy; 2000, 2002, 2005, 2007 phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=9&t=771&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2015 00:44:04 GMT -->
+</html>

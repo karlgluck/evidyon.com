@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=9&t=745&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2015 00:44:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+<title>Unseen Studios &bull; View topic - Status Report - September 26</title>
+
+<link href="./styles/prosilver/theme/print.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Unseen Studios</h1>
+		<p>Game Development and More<br /><a href="http://unseenstudios.com/community/">http://unseenstudios.com/community/</a></p>
+		
+		<h2>Status Report - September 26</h2>
+		<p><a href="http://unseenstudios.com/community/viewtopic.php?f=9&amp;t=745">http://unseenstudios.com/community/viewtopic.php?f=9&amp;t=745</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Status Report - September 26</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Sep 26, 2007 12:34 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Well, I'm still buried in classwork but when I'm not, I'm coding nonstop to try and get the resource editor in a usable state.  If you're curious what's taking so long, here's the gist of what's up:
+<br />
+<br />When I released the last version of the map editor,  I realized that the maps needed much more to them than just objects and ground.  Maps aren't interesting without spawn points, solid walls, special effects, music, etc.  Therefore, in order to let you guys build a game world that isn't quite as...not-game-ish...as the one I made (where you're chairs and you can walk through everything and you don't sink in water) I needed to expand the map editor.  Small problem being, the basic way the editor stored its data couldn't be converted to do this.
+<br />
+<br />So, I started writing another editor from the ground up (late July, early August).  Everything was going well and I got most of the texture, 3d model, sound and music code working; however, I found that I was having to write the same loading/saving/merge/sort/display routines over and over with very minor changes.  Because I intend to expand the editor significantly in the future--the technical term is &quot;scaling&quot;--I realized that that method wasn't going to fit the bill.  We're now at mid-late August.
+<br />
+<br />I've since changed the most low-level way that the resource editor stores its information, in the process creating a library (which borrows its name from an old project of mine) called DirectCraft.  As of yesterday, I'm nearing the end point in finalizing this library, which will take care of all of the tedious code for me and let me focus on developing game components (most of which are finished and I'll just need to convert).
+<br />
+<br />Hooray!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Sep 28, 2007 8:14 pm</strong></div>
+				<div class="author">by <strong>lawn gnome</strong></div>
+				<div class="content">sounds great Karl, cant wait for it dude.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Oct 02, 2007 2:09 pm</strong></div>
+				<div class="author">by <strong>Massive</strong></div>
+				<div class="content">Sounds like good news - thanks for the update.
+<br />
+<br />Dare I ask when reasonably playable version might see the light of day...?</div>
+			</div>
+			<hr />
+			</div>
+
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+	the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+	"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+	forums may be affected.
+
+	The phpBB Group : 2006
+//-->
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 6 hours <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB &copy; 2000, 2002, 2005, 2007 phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=9&t=745&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2015 00:44:06 GMT -->
+</html>

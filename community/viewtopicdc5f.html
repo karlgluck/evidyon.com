@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=9&t=829&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2015 23:27:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+<title>Unseen Studios &bull; View topic - Help me with this decision about consumable items (potions)</title>
+
+<link href="styles/prosilver/theme/print.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Unseen Studios</h1>
+		<p>Game Development and More<br /><a href="index.html">http://unseenstudios.com/community/</a></p>
+		
+		<h2>Help me with this decision about consumable items (potions)</h2>
+		<p><a href="viewtopic066b-3.html">http://unseenstudios.com/community/viewtopic.php?f=9&amp;t=829</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jun 19, 2008 11:35 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Hey everyone, I'm working on the code for consumable items right now and have hit a snag.  Here's the problem:<br /><br />Let's say you have a character inventory of 50 slots.  For kicks, we'll say every slot is full.  When a player uses an item (blue potion, for example) the server has to check to make sure it's actually in the inventory.  This means searching through up to 50 slots every time an item is used.  Now, multiply that by 100 players and lots of items being used, and you can see the issue:  that's a lot of searching that seems fairly wasteful.  Although there are ways to improve this search, they take up more memory and get more complex than just storing a list of items.<br /><br />So there are two things I can do to solve this.  Please tell me your thoughts on them.<br />#1:  I make it so that there are slots in the equipped items area for consumables.  They can be stacked here, so you'd be able to hold a pretty good amount but only ones in the equipped items area would be usable.  Plus, they would count as equipped items so they wouldn't drop when you die.  The disadvantage is the limitation to the number of consumables that can be used simultaneously--I would probably have 6-8 slots.<br />#2:  I sort the inventory by type, so that consumables always come first.  This is slightly less efficient from a coding standpoint (since inventories are constantly being sorted) but it significantly shortens the search.  The advantage here is that you can use more items simultaneously, but the disadvantage is that they always drop when you die.<br /><br />If you have any other ideas, let me know!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jun 19, 2008 10:53 pm</strong></div>
+				<div class="author">by <strong>lawn gnome</strong></div>
+				<div class="content">Karl, those both are good ideas, but here is how i would do it.<br /><br />In the packet sent to the server, dont only send the command to eat food or what ever, but also the slot its currently at. That way you just have to check to make sure that slot does infact have the item they are trying to use.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jun 20, 2008 5:13 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">That's a good idea--but what happens when the user picks up new items, or items are completely consumed?  Their inventory isn't continuously updated (this takes a pretty big packet) so when an item is completely consumed, any items after it in the inventory would be shifted up by one, making them unusable until the player updates their inventory (which I am trying to minimize frequency of for the previous reason).</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jun 20, 2008 9:25 am</strong></div>
+				<div class="author">by <strong>Richard. UK</strong></div>
+				<div class="content"><blockquote><div><cite>Karl G. wrote:</cite>So there are two things I can do to solve this.  Please tell me your thoughts on them.<br /><br />#1:  I make it so that there are slots in the equipped items area for consumables.  They can be stacked here, so you'd be able to hold a pretty good amount but only ones in the equipped items area would be usable.  Plus, they would count as equipped items so they wouldn't drop when you die.  The disadvantage is the limitation to the number of consumables that can be used simultaneously--I would probably have 6-8 slots.<br />#2:  I sort the inventory by type, so that consumables always come first.  This is slightly less efficient from a coding standpoint (since inventories are constantly being sorted) but it significantly shortens the search.  The advantage here is that you can use more items simultaneously, but the disadvantage is that they always drop when you die.<br /><br />If you have any other ideas, let me know!</div></blockquote><br /><br />I have a suggestion that may involve A combination of the two. Firstly take the example one, Very much like the idea of &quot;equipping&quot; the potions, because lets face it, in any adventure in a fantasy world you would ensure that you had your potions nearby in a quickly accessible position in your inventory. Now to go into slightly more details. Would this cause a very intense and unwanted usage on the server at all?<br /><br />Step 1 -  Client has 2 stacks of potions, in say slot 30 and 44. (collected from adventures)<br />Step 2 -  Server reads through slots, notices stacks at 30 and 44.<br />Step 3 -  Collates data from 30 and 44, is then used elsewhere. (send this to a &quot;Virtual&quot; inventory, Client???)<br />Step 4 -  When potions are used, Server looks at the &quot;Virtual&quot; inventory, stating the &quot;Total&quot; potions collated from Step 3<br />Step 5 -  Server notices that there is &gt; 0 Potions, &quot;Use Potion&quot;.<br /><br />I don't know whether this is a combination of both your opinions Karl, but thats my little piece of brain power lol!!, Hope it's not too late for you. does this seem feasible approach or is this what you want to stay away from?<br /><br /><br /><br />All the best,<br /><br /><br />Richard</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jun 20, 2008 11:07 am</strong></div>
+				<div class="author">by <strong>Nenitus</strong></div>
+				<div class="content">Why not keep a variable as part of the character, when you buy/pick up a potion it adds +1 and when you use one it subtracts one. (unless you're having like 400 consumables, then that's excessive)<br /><br />i.e. keep a running tally, instead of having to search when used</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jun 20, 2008 12:08 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">First, I'll reply to both of you.  In order to prevent duping items, it's imperative to only keep information about an item in one place.  By definition, duping cannot occur if this is strictly maintained.<br /><br />For this reason, Richard, I wouldn't want to use a virtual inventory.  It's a good idea and would certainly work if I could trust the clients to behave, but I have to assume that any information coming into the server is, in fact, not being generated by the client.  When creating this system, I make the worst-case assumption that someone has completely decrypted the packet system and can send any packet with any information at will.  With a virtual inventory, it would be trivial to, for example, send &quot;use item&quot; and &quot;drop item&quot; packets simultaneously.  Although the server interprets the packets serially, the code to maintain the virtual inventory could cause item duplicates to occur unless it is strictly, repeatedly checked every time something happens with the inventory.  In this case I might as well just search the inventory.<br /><br />And Nentius, although I don't plan on having 400 consumables I like to create solutions that scale easily.  In this case, having a per-potion flag does not scale nicely since it inflates the size of each character's data set for every new item type I add.<br /><br />Thanks for the ideas, guys!  I know I'm sounding critical, but you are really helping me think this through--and you're getting a taste of the endless stream of &quot;what ifs&quot; I have to consider when coding PV <img src="images/smilies/icon_razz.gif" alt=":P" title="Razz" /></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jun 20, 2008 2:37 pm</strong></div>
+				<div class="author">by <strong>Richard. UK</strong></div>
+				<div class="content">Hey Karl,<br /><br />Nice feedback, in response to that, is it not possible for you to include the &quot;Virtual&quot; inventory into the SQL Database, this will be away from client this way. All information will be stored that side, not client. I said client with a question because i was unsure whether or not this could be worked as client or server side.<br /><br />I then start to think well if the server is doing that for each characacter creating &quot;virtual&quot; inventories then this could be interperated into an SQL query. This takes everything away from the client packets is that right?, i'm not too sure but i hope that makes sense because I am not entirely 100% sure myself. Just wondered whether or not that could all be dealt with server side, in which case the client cannot replicate packets to induce that sort of behaviour!<br /><br />Fire Away !!<br /><br /><br />Richard</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jun 20, 2008 6:34 pm</strong></div>
+				<div class="author">by <strong>lawn gnome</strong></div>
+				<div class="content">Karl,<br /><br />about my idea. <br /><br />Ok so im going to assume that the server is where the item is stored and that the client only reflects the data sent... So when they use their item it will send the packet with the code to use the item and also the position in the inventory it is located. Once used, the server should send back a packet with the players inventory and the client should update the inventory. This way no items are stored on the client and all the client does is reflect the items.  <br /><br />What you said about the packets being big...this shouldn't be a problem if you only include important info in the packet. When using an item, only send the info of the item and its location in the inventory. When updating the inventory, only send the items and their quantity. Naturally, these packets will be bigger then most depending on the size of a players inventory, but it should still be quick to send and receive.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Jun 21, 2008 7:26 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Sending the inventory with any kind of regular frequency, regardless of how well you optimize its size, is a linearly scaling problem.  For 'n' players with 'k' items in their inventory sent (on average) with frequency 'f', the total number of items sent per second is proportional to n*k*f; given that I can't easily adjust 'n' and 'k', the solution is to reduce 'f'.  Any implementation which requires updating the inventory less is, therefore, optimal.  But I definitely like the idea of the client sending the item's location in inventory--I'll use that optimization with equipping potions <img src="images/smilies/icon_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Jun 21, 2008 10:52 pm</strong></div>
+				<div class="author">by <strong>Charles Babbage</strong></div>
+				<div class="content">Karl,<br /><br />You really should probably decouple the client view of the inventory from the server's view. You've already probably thought of this (and may indeed have it implemented this way, haven't checked) but use a sort of transactional model of things.<br /><br />Client starts up, spawns in world. Server says, 'You have these items'. Client does amusing things, server sends messages appropriately. Said messages include copies of 'Item Picked Up.', for local bookkeeping. When the client wants to use something, they select the item from their inventory, and send a request to the server to use it.<br /><br />Server looks at request, checks it against the official inventory of the client, and says 'Sure!' or 'Bug off'. In fact, you could probably send a signed number, and have the MSB signal a success, with the lower bits telling the new quantity. That'd be pretty efficent, and I doubt that a client will be causing greater than 2^31 or some such pickups.<br /><br />Anyways, this means that the client is responsible for their own inventory, and the server has final word on anything that happens. Duping is harder because the client can't just tell the server they picked something up if the server doesn't agree. The client can now also be trusted to manage their own view of the inventory, because any difference will only affect the client--you can only accidentlally lose or think you have items, as opposed to being able to get extra items.<br /><br />The other nice thing about having the client manage their own view of their inventory is that the server is relieved of any burden on how it is actually organized, if you want it to be. Client can save a particular arrangement of things to their disk, or just have the poor guy rearrange his stuff each time he logs in. Sorting is done client-side, and because everything is a transaction ('Can I do X ?'), you don't have to worry about the client sorting causing duping bugs.<br /><br />Headaches only occur when a client's inventory becomes desynced with the server's official copy. So, to fix this, have the client calculate a CRC or something of the inventory (or a hash or what have you), and send it to the server. The server has same lying around calculated after every inventory transaction (which probably isn't the huge performance hit you'd imagine... there is a lot of downtime doing system calls and sending things over the network, so might as well put that time to good use), and if they differ, tells the client the updated value. If the client's value ever differs between transactions, the server tells them that they're inventory is out of date--and only then does the server need send anything.<br /><br />Again, to wrap up:<br /><br />1. Server has master list of client's inventory<br />2. Client has local list of client's inventory<br />3. Client gets updated list at login<br />4. Client gets updates to list as they perform actions<br />5. Server keeps hash of client's inventory, regenerated each time a transaction causes items to change<br />6. Client calculates hash of inventory every so often and compares with server... if view is out of date, server sends correct version<br /><br />TLDR:<br /><br />Let the client manage their own view of things, and correct it as needed.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Jun 22, 2008 1:13 am</strong></div>
+				<div class="author">by <strong>lawn gnome</strong></div>
+				<div class="content">Hey i have changed my ideas about what i said earlier.<br /><br />The sorting of the inventory should be client side. The server should just check the packets to make sure they are not duping or trying to pick up items that are not there.<br /><br />This would reduce the need for sending and receiving packets when using items.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Jun 22, 2008 8:50 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">A transactional model sounds really nice and the CRC you mentioned is an elegant way of solving the issue of synchronization loss.  I haven't completed implementing it yet, so it should be pretty easy to use that method.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Help me with this decision about consumable items (potions)</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jul 04, 2008 1:28 am</strong></div>
+				<div class="author">by <strong>Ratiotile</strong></div>
+				<div class="content">I also agree with Charles on this one. Make it up to the client to arrange and order the inventory however it wants. Store the inventory on the server in a defined order. A set(tree) would be an optimal data structure to store the inventory in, as I don't think a hash-set is worth it for only 50 items. Now you are only searching up to 5.6 items with tree-set, instead of 50 with an array or list.<br /><br />It doesn't matter how you implement it client-side. Probably an array for ordering. Make the client pull it's load!  <img src="images/smilies/icon_wink.gif" alt=":wink:" title="Wink" /></div>
+			</div>
+			<hr />
+			</div>
+
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+	the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+	"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+	forums may be affected.
+
+	The phpBB Group : 2006
+//-->
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 6 hours <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB &copy; 2000, 2002, 2005, 2007 phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=9&t=829&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2015 23:27:18 GMT -->
+</html>

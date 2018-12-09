@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=32&t=1213&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2015 23:56:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+<title>Unseen Studios &bull; View topic - Where we stand</title>
+
+<link href="styles/prosilver/theme/print.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Unseen Studios</h1>
+		<p>Game Development and More<br /><a href="index.html">http://unseenstudios.com/community/</a></p>
+		
+		<h2>Where we stand</h2>
+		<p><a href="viewtopicc31c.html">http://unseenstudios.com/community/viewtopic.php?f=32&amp;t=1213</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Nov 13, 2008 2:56 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Thank you to everyone who was able to test the latest update before the server went down again.  I am not sure when it will be back up again; I haven't hear from Thadius in over a month so...who knows what's going on there.  I just wanted to make a quick post to let you all know what is happening.<br /><br />I have found that the GUI system I developed needs some slight modification.  After coding so many different interface dialogs, it has become obvious that I need to streamline a few things.  The bazaar interface should take less than half an hour to write after I tweak it a bit, whereas writing the interface using the current code took about 3-4 hours.  This will allow me to make more complex and reliable interfaces--which is a major problem right now, as you surely could tell by the number of display errors in the Bazaar.<br /><br />After much consideration, I have reached the conclusion that it might be best to change course a little bit.  Gameplay needs to be solidified before anything else can grow, and I'd like to get the &quot;feel&quot; of the game much closer to how I had imagined (and how I'm sure you've all imagined it, too).  Now that we I have experience with what is easily possible as far as spells/items/character attributes and controls go, I'd like to get back to basics and set up the gameplay--piece by piece, from the ground up.<br /><br />First, I'll set up player movement.  This should be smooth, natural and precise even under moderate lag--no jumping, twitching, spinning, or skating.  What I have right now is a patched system that delivers most of that, but some cases are overlooked and cause the game to spaz out (try running into the mountains when in gas form, for example).<br /><br />Next, I'd like to get melee combat right.  My first idea of trying to unify melee combat, spells and items all into a single architecture has worked, but the back-end hacks to make it work deliver weird results.  For example, if you teleport away from a monster that has swung at you, you can still be hit by that monster's last attack.  Also, the architecture was never intended for automatically reactive combat--i.e. shield-blocking.  At this point, I can see where it would fit into a redesigned structure.  This should make combat feel much better, since I'm treating it as a separate unit instead of trying to make it fit in somewhere it doesn't.<br /><br />Finally, the spell system needs to be solidified.  <span style="font-weight: bold">This is where I could really use some help!</span>  I am fond of the spell-combos idea, but I'm also a little disappointed in the limitations it puts on the game.  Because I wanted to make any spell combo-able, spells had to have strict limitations so that creating the combos didn't overpower them.  For example, no spell could be a DOT--otherwise, a DOT spell could be comboed with another DOT...which could deal disastrous damage and also create a huge amount of strain on the server.  Furthermore, combo spells don't have a particularly straightforward way of being targeted, which is a gameplay issue.<br /><br />During the December break from school, I am hoping to be able to focus on adding content to the game and doing design so that I can have the beta server up in January--but first things first.<br /><br />Long story short, I'm not sure what to do about spells and could use your thoughts (on any of this)<br /><br />~Karl</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Nov 13, 2008 8:52 pm</strong></div>
+				<div class="author">by <strong>Exempt</strong></div>
+				<div class="content">My only input on spells would be... Xenimus has them down pat...Fast action very little restrictions( I'd rather not click a button wait 2 second... .... .... ). Only problem is Ej has it set so whoever has more meds will win... If i was to do it i'd make meds stack say 10-20 per stack. That would limit med tapping somewhat because lack of inventory space. But still be free to do whatever you want really. Just my two cents. <img src="images/smilies/icon_neutral.gif" alt=":|" title="Neutral" /></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Nov 13, 2008 10:56 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">I have heard that there are spell combos in the game, but have no idea how they work, or how they're supposed to work, or, as a result, how they might work better.<br /><br />But when I hear &quot;spell combo,&quot; what I imagine is something like this:<br />A certain character can cast the spells X, Y, Z.  Any one of these spells has an individual effect--press the button, select a target, and bam!--alternatively, he could press two or three spell buttons in a certain order and *then* select a target, triggering a combo spell.<br /><br />So if he can cast a Fireball and a Beam, if he were to press his button for Fireball, and then Beam, and then select a target, he would cast a &quot;fireball beam&quot; at the target--a beam that strikes the target and sets off a small area effect the target, dealing primary damage to the target and secondary damage to any immediately around the point of impact.<br /><br />This system (prep several spells in a certain order, and then cast--either by selecting a target or, in the case of area-around-self or self-targeting or party-targeting, &amp;c. spells, by pressing a special &quot;cast&quot; button, or by finishing the combo with a particular &quot;combo spell&quot; that triggers the cast) should be flexible enough to allow whatever you want to allow, while disallowing what you don't want (just doesn't make a combo!).<br /><br />So yeah.  How *do* combos work, and why do they need changing?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 14, 2008 6:52 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Ugh my post just got erased.  Well the jist of it was that you press multiple keys and hold them down, then click targets and release to cast a combo.<br /><br />For instance:<br />1- anaglaci<br />2- anapiri hydra<br /><br />Press &quot;1&quot; and &quot;2&quot; together, then release both.  If anaglaci hits monsters, those monsters will explode with fire that can hit other monsters. <br /><br />At this point, all spells are combo-able.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 14, 2008 8:39 am</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">Hm.  Sounds complicated.<br />So how would you feel about a system like the one I suggested (I think I heard something like it from you a while back):  tap keys in sequence, cast, not all spells combo-able.<br /><br />It seems that that escapes the fear of overpowering that comes from making *all* spells combo-able, which in turn allows for more interesting combos.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 14, 2008 9:09 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">I think I proposed something like that earlier, but I'll reiterate a small change:<br /><br />Tap keys in sequence, click to target.  Clicking repeatedly casts the combo repeatedly.<br /><br /><br />I do like the idea of not all spells being combo-able...but it does decrease the awesomeness a bit :/</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 14, 2008 12:31 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">Casting the combo repeatedly would seem to invite over-powering.  Why not make the player repeat the whole sequence each time?<br /><br />Sure, this would slow him down, but isn't the point of combos to be slower but more powerful?  If you can repeat a combo rapidly, we'd have to water the power down and they would become less special.<br /><br />As for decreasing awesomeness, I think it would do just the opposite:  by restricting the number of combos, we would be able to make them more powerful/awesome/cool, for the same reason as making combos less repeatable would allow us to make them more powerful/awesome/cool.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 14, 2008 3:44 pm</strong></div>
+				<div class="author">by <strong>kuba</strong></div>
+				<div class="content">I like Joe's idea, its very simple and straight-forward.<br /><br />Cast one spell, cast another spell in the combo, click target, combo is cast.<br /><br />Rather than having all combos be accessible granted you have the spells, how about having the characters learn combos via level-up, shrines, skill point-distribution, merchants, etc.<br /><br />For example, say upon hitting lvl 20 you're character learns a firebomb combo. Upon leveling it would say New Combo learned above the characters head and the new combo would be shown on a screen, Flamma + Fireball + Beam. This sequence casts a beam with a fireball that explodes dealing AOE damage.<br /><br />Have other simple combos sold at merchants, rare combos at shrines, etc.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 14, 2008 5:11 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">Those are great ideas.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Nov 15, 2008 9:54 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">That's a good idea Kuba!<br /><br />Now how do you think that the combos should work--should they combine in some logical way, or should the server detect the combo and create a brand new spell?<br /><br />For example, you can cast flamma + fireball + beam, that would logically hit the target with flamma, shoot a fireball at them and simultaneously hit them with a beam spell.  If it were a &quot;detected&quot; combo (think Mortal Kombat jump/kick/hit combos creating special moves) it could do something different, such as shoot a fireball that seeks a target, then when it hits creates a fire explosion and beams that player.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Nov 15, 2008 10:58 am</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">Definitely Mortal-Kombat-style.  Especially if I can have a bicycle kick.   <img src="images/smilies/icon_razz.gif" alt=":P" title="Razz" /></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Nov 15, 2008 2:14 pm</strong></div>
+				<div class="author">by <strong>Sankt Pauli</strong></div>
+				<div class="content">I have to admit the very first combo-system you had implemented seemed the most easy solution: Press the keys down in the order you want the spells to go off in the combo, and release.<br />I can see other ideas being too tricky to be pulled off smoothly in a fastpaced pvp/pvm. However, i find it incredible hard to judge how a combo-system might &quot;feel&quot; in the game, so i keep myself out of that untill i can do some &quot;practical&quot; tests.<br /><br />As for thad, just spam him with pms either on here or on xt incase the server goes down. He still is on xt regulary, so chances are he just doesn't know that the server is down. You might want to look for an alternative solution though, because it would be a shame if the progress of this project is halted just by a crappy server and/or lack of communication between programmer and host (and if you did pm thad and he didn't reply...well then he's a dolty). :J</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Nov 16, 2008 11:56 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content"><blockquote><div><cite>Sankt Pauli wrote:</cite>As for thad, just spam him with pms either on here or on xt incase the server goes down. </div></blockquote><br />Yeah, I have been...but no response :/  I really would like to move to a paid server asap.  Maybe after Thanksgiving break.<br /><br /><br />So how about a status update?  I've finished reworking the majority of what I wanted to do with the GUI.  In the next update, buttons and lists will be much better behaved.  I also know how to implement the scroll wheel for lists, but I haven't gotten around to it yet as it actually requires quite a lot of grunt-work.  I fixed movement.  I have built a hand-to-hand combat simulator which forms the core of the redesigned combat engine and it seems to work very well.  The next step is to strip out the current combat system and implement this new engine.  Needless to say, this will be a little tricky because it is a fundamental shift in how the game works.  I'm hoping that will go smoothly and I'll give you an update soon.<br /><br />For now, off to study transmission lines for my test this week.  Ugh, it never ends!  Two midterms last week, another one this week....</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Nov 16, 2008 1:58 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">It sounds like you're getting a lot done, but will that all be dropped on us with the next update, or spread out over time?<br /><br />It would make sense to wipe characters, restructure classes, and introduce the new combat system, and rework spell combos all at once, but that's a lot of significant gameplay changes at the same time.  It might be better that way, but it might also be too much to make/test for one update ...<br /><br />So what's are we to expect for the next few updates?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Nov 16, 2008 3:09 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">I'm hoping to send out the new combat system in the next update.  After that, I will be working on the spell combos (that'll be another update).  Finally, I'll introduce consumables, geosids and item charges in one update.  Once all the bugs are gone, it'll be time to wipe races/classes and get down to design.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Nov 16, 2008 5:17 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content"><blockquote class="uncited"><div>I'm hoping to send out the new combat system in the next update. After that, I will be working on the spell combos (that'll be another update). Finally, I'll introduce consumables, geosids and item charges in one update. Once all the bugs are gone, it'll be time to wipe races/classes and get down to design.</div></blockquote><br /><br />A gradual change.  That should give us plenty of time to work the bugs out, then.  I'm looking forward to the end of this, when we've got the gameplay down and can wipe characters and get to more serious game-building.<br /><br />Can't wait!   <img src="images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Nov 16, 2008 6:28 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Well...it will be a graded change, but gradual?  Maybe not so much.  I hope to have all this done at the end of Thanksgiving break--a little more than two weeks or so.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Nov 16, 2008 8:57 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">Even better.  So we could very well have a completely new game to play by the time we get a new server?  Sounds good to me! <img src="images/smilies/icon_razz.gif" alt=":P" title="Razz" /></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Nov 16, 2008 9:39 pm</strong></div>
+				<div class="author">by <strong>prehistoric</strong></div>
+				<div class="content">dammmnnnn im exited</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 17, 2008 7:58 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content"><blockquote><div><cite>Joe M. wrote:</cite>Even better.  So we could very well have a completely new game to play by the time we get a new server?  Sounds good to me! <img src="images/smilies/icon_razz.gif" alt=":P" title="Razz" /></div></blockquote><br />Yep <img src="images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /><br /><br /><blockquote><div><cite>prehistoric wrote:</cite>dammmnnnn im exited</div></blockquote><br />Hehe I'm glad</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Where we stand</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 21, 2008 3:30 pm</strong></div>
+				<div class="author">by <strong>Exempt</strong></div>
+				<div class="content"><blockquote><div><cite>prehistoric wrote:</cite>dammmnnnn im exited</div></blockquote><br /><br /><br />You and me both...Only thing i hate is...2 updates before the wipe. Testing leveling...then bom all over. It' all good tho.</div>
+			</div>
+			<hr />
+			</div>
+
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+	the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+	"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+	forums may be affected.
+
+	The phpBB Group : 2006
+//-->
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 6 hours <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB &copy; 2000, 2002, 2005, 2007 phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=32&t=1213&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2015 23:56:12 GMT -->
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=32&t=1023&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2015 00:45:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+<title>Unseen Studios &bull; View topic - &quot;Doesn't support indexed blended animation&quot; + Vista problem</title>
+
+<link href="./styles/prosilver/theme/print.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Unseen Studios</h1>
+		<p>Game Development and More<br /><a href="http://unseenstudios.com/community/">http://unseenstudios.com/community/</a></p>
+		
+		<h2>&quot;Doesn't support indexed blended animation&quot; + Vista problem</h2>
+		<p><a href="http://unseenstudios.com/community/viewtopic.php?f=32&amp;t=1023">http://unseenstudios.com/community/viewtopic.php?f=32&amp;t=1023</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>&quot;Doesn't support indexed blended animation&quot; + Vista problem</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Sep 01, 2008 10:42 am</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">Hey Karl,<br /><br />First, Vista:  <br />the debug logs weren't showing up until I turned off User Access Control (the annoying thing that pops up &quot;are you sure you want to do this?&quot; messages every few seconds)--Vista wasn't allowing any editing of the directory in Program Files; I couldn't even edit the config.ini file directly--I had to copy it to the desktop where my computer would allow me to change it.  I don't know if you can work around this, but I thought you'd like to know.<br /><br />Second,<br />I've been having some pretty bad lag, and though I tend to blame my University's network, I also noticed this in the debug log:<br />&quot;This computer's hardware doesn't support indexed blended animation; using software device to compensate&quot;<br /><br />Doesn't seem good.  My computer is a new Dell Inspiron 1525 laptop, which seems to be using &quot;Mobile Intel(R) 965 Express Chipset Family&quot; for its graphics.  So is this a natural result of my computer's incapability, or is this Evidyon not playing nice?  It seems that a new laptop shouldn't have such difficulties, but I didn't exactly purchase the thing for gaming, so.<br /><br />Here's the debug log:<br /><blockquote class="uncited"><div>.\volucrisclient.cpp(51): [INFO]  Executing state &quot;Startup&quot;<br />.\acquiregraphics.cpp(103): [INFO]  Using &quot;Mobile Intel(R) 965 Express Chipset Family&quot;<br />.\acquiregraphics.cpp(177): [WARNING]  This computer's hardware doesn't support indexed blended animation; using software device to compensate<br />.\acquireresources.cpp(95): [INFO]  TODO: Make sure the media file is the correct type<br />.\acquireresources.cpp(953): [INFO]  Max vetex blend matrices:  4<br />.\acquireresources.cpp(954): [INFO]  Max vertex blend matrix index:  255<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 0 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 0 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 0 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 1 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 1 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 2 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 3 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 3 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 3 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 4 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 4 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 5 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 5 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 6 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 6 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 7 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 7 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 8 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\acquireresources.cpp(1022): [INFO]  Rendering mesh 8 / 9   &gt;&gt;  texture group 0 / 1  &gt;&gt; in software<br />.\volucrisclient.cpp(51): [INFO]  Executing state &quot;Connect&quot;<br />.\stateconnect.cpp(142): [INFO]  Connection to poorserver.no-ip.org succeeded!<br />.\volucrisclient.cpp(51): [INFO]  Executing state &quot;Account Login&quot;<br />.\volucrisclient.cpp(51): [INFO]  Executing state &quot;Logged Into Account&quot;<br />.\volucrisclient.cpp(51): [INFO]  Executing state &quot;World - Main&quot;<br />.\stateworldmain.cpp(52): [WARNING]  Clearing effect visualizations might cause memory leaks...<br />.\stateworldmain.cpp(611): [INFO]  NETMSG_UPDATEYOURACTIVEPARTITION:  0 actors removed, 1 left<br />..\common\decodeserverpackets.cpp(745): [INFO]  Receiving item 85<br />..\common\decodeserverpackets.cpp(745): [INFO]  Receiving item 9<br />..\common\decodeserverpackets.cpp(745): [INFO]  Receiving item 53<br />..\common\decodeserverpackets.cpp(745): [INFO]  Receiving item 31<br />..\common\decodeserverpackets.cpp(745): [INFO]  Receiving item 85<br />.\stateworldmain.cpp(322): [INFO]  [actor 82205] : 'Winking At Lillian' telling actor description<br />.\stateworldmain.cpp(322): [INFO]  [actor 82205] : 'Winking At Lillian' telling actor description<br />.\stateworldmain.cpp(322): [INFO]  [actor 78055] : 'You Sire, got PKED!:o' telling actor description<br />.\stateworldmain.cpp(342): [INFO]  Item 1 visible<br />.\stateworldmain.cpp(342): [INFO]  Item 66 visible<br />.\stateworldmain.cpp(342): [INFO]  Item 99 visible<br />.\stateworldmain.cpp(322): [INFO]  [actor 75019] : 'kelchy' telling actor description<br />.\stateworldmain.cpp(342): [INFO]  Item 67 visible<br />.\stateworldmain.cpp(322): [INFO]  [actor 80178] : 'Hatebreed' telling actor description<br />.\stateworldmain.cpp(342): [INFO]  Item 67 visible<br />.\stateworldmain.cpp(342): [INFO]  Item 69 visible<br />.\stateworldmain.cpp(342): [INFO]  Item 8 visible<br />.\stateworldmain.cpp(322): [INFO]  [actor 81803] : 'Beetle Juice' telling actor description<br />.\stateworldmain.cpp(342): [INFO]  Item 66 visible<br />.\stateworldmain.cpp(322): [INFO]  [actor 80018] : '' telling actor description<br />.\stateworldmain.cpp(342): [INFO]  Item 5 visible<br />.\stateworldmain.cpp(342): [INFO]  Item 71 visible<br />.\stateworldmain.cpp(322): [INFO]  [actor 77957] : 'dark nakills' telling actor description<br />.\stateworldmain.cpp(342): [INFO]  Item 1 visible<br />.\stateworldmain.cpp(342): [INFO]  Item 5 visible<br />.\stateworldmain.cpp(342): [INFO]  Item 7 visible<br />.\stateworldmain.cpp(611): [INFO]  NETMSG_UPDATEYOURACTIVEPARTITION:  0 actors removed, 7 left<br />.\stateworldmain.cpp(322): [INFO]  [actor 80496] : 'Pinky' telling actor description<br />.\stateworldmain.cpp(342): [INFO]  Item 87 visible<br />.\stateworldmain.cpp(322): [INFO]  [actor 80496] : 'Pinky' telling actor description<br />.\stateworldmain.cpp(342): [INFO]  Item 87 visible<br />.\stateworldmain.cpp(322): [INFO]  [actor 82031] : 'Rampage' telling actor description<br />.\stateworldmain.cpp(342): [INFO]  Item 1 visible<br />.\stateworldmain.cpp(342): [INFO]  Item 5 visible<br />.\stateworldmain.cpp(342): [INFO]  Item 7 visible<br />.\stateworldmain.cpp(322): [INFO]  [actor 80496] : 'Pinky' telling actor description<br />.\stateworldmain.cpp(342): [INFO]  Item 87 visible<br />.\stateworldmain.cpp(322): [INFO]  [actor 80496] : 'Pinky' telling actor description<br />.\stateworldmain.cpp(342): [INFO]  Item 87 visible<br />.\volucrisguieffectkeybindinglist.cpp(248): [INFO]  Showing 6 effects in key binding screen!<br />.\stateworldmain.cpp(526): [INFO]  Leave world confirmed<br />.\volucrisclient.cpp(51): [INFO]  Executing state &quot;Logged Into Account&quot;<br />.\volucrisclient.cpp(51): [INFO]  Executing state &quot;Disconnect&quot;<br />.\volucrisclient.cpp(51): [INFO]  Executing state &quot;No Connection&quot;<br />.\volucrisclient.cpp(51): [INFO]  Executing state &quot;Shutdown&quot;<br /></div></blockquote><br /><br /><br />Best,<br />Joe<br /><br />P.S.  I do have the latest drivers from Intel.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: &quot;Doesn't support indexed blended animation&quot; + Vista problem</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Sep 01, 2008 12:17 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Hi Joe,<br /><br />So that's what's causing the Vista bug!  I don't have Vista so I can't test the game on it.<br /><br />As far as the indexed blended animation thing goes, this is Direct3D telling Evidyon &quot;the hardware can't do what you want, so bug off and do it yourself&quot;.  There's a little history here.<br /><br />It used to be that the Direct3D built-in &quot;pipeline&quot; for graphics rendering, which is nice and standardized, was well-supported on hardware and graphics card manufacturers kept making better cards to implement this pipeline.  Shift forward several years, and shaders--essentially specialty programs that run directly on the graphics card without the CPU doing anything at all--have pretty much taken over.  They are better than the standard pipeline:  far faster, more flexible, etc.<br /><br />I want Evidyon to support hold hardware, so I figured &quot;hey, let's go with the older way of doing things since the new cards should all support this basic stuff, right?&quot;  But what I didn't count on is that some new cards have started completely dropping support for <span style="font-weight: bold">standard</span> parts of Direct3D that they, in their infinite wisdom, have decided are antiquated.  So we end up with a nice little conundrum:  supporting old hardware forces new hardware to downgrade itself, supporting new hardware completely prevents old hardware from working at all.<br /><br />That's the stage I'm at with this stuff, and it's probably a lot more than you wanted to know <img src="./images/smilies/icon_smile.gif" alt=":)" title="Smile" />  It is likely that the lag is due to this issue--rendering in software is definitely not fast.  I'm going to be supporting new hardware in the future, but for now I'd like to add more game features first.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: &quot;Doesn't support indexed blended animation&quot; + Vista problem</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Sep 01, 2008 12:52 pm</strong></div>
+				<div class="author">by <strong>thadiusofx3</strong></div>
+				<div class="content">That's why mine worked, because i have UAC (yuck!) turned off</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: &quot;Doesn't support indexed blended animation&quot; + Vista problem</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Sep 01, 2008 12:54 pm</strong></div>
+				<div class="author">by <strong>hydroxide</strong></div>
+				<div class="content">Humm wierd that you are having trouble using it on vista. I only run evidyon on my laptop(which has vista) and it runs fine.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: &quot;Doesn't support indexed blended animation&quot; + Vista problem</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Sep 01, 2008 1:00 pm</strong></div>
+				<div class="author">by <strong>thadiusofx3</strong></div>
+				<div class="content">volucrisguieffectkeybindinglist.cpp<br /><br />love that name</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: &quot;Doesn't support indexed blended animation&quot; + Vista problem</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Sep 01, 2008 1:18 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Haha I forgot you guys could see the names of the source files in the debug log.  I've got some other pretty good ones, such as<br /><br />evidyonguisideiconselement.cpp<br />volucrisguistatdisplay.cpp<br /><br />and the epic:<br />omnidirectionaltargetprojectiledeliveryeffect.cpp   (from the world editor)</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: &quot;Doesn't support indexed blended animation&quot; + Vista problem</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Sep 01, 2008 5:58 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content"><blockquote class="uncited"><div>Humm wierd that you are having trouble using it on vista. I only run evidyon on my laptop(which has vista) and it runs fine.</div></blockquote><br /><br />The game will start and it will &quot;play,&quot; but the lag's so bad it's pretty much unusable.  That seems to be a hardware rather than a software issue.  Thanks for the detailed reply Karl!  I appreciate the information and (of course) fully support your goal of content &gt; compatibility (for now, at least ...).<br /><br />I mentioned Vista because I noticed that UAC wasn't allowing Evidyon to create the debug logs (and maybe perform other actions on its own directory--seems a pretty stupid restriction if you ask me, but that's Vista).</div>
+			</div>
+			<hr />
+			</div>
+
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+	the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+	"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+	forums may be affected.
+
+	The phpBB Group : 2006
+//-->
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 6 hours <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB &copy; 2000, 2002, 2005, 2007 phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=32&t=1023&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2015 00:45:19 GMT -->
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=5&t=74&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2015 23:13:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+<title>Unseen Studios &bull; View topic - *Fanfare!*  The Born to Rule Client!!</title>
+
+<link href="styles/prosilver/theme/print.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Unseen Studios</h1>
+		<p>Game Development and More<br /><a href="index.html">http://unseenstudios.com/community/</a></p>
+		
+		<h2>*Fanfare!*  The Born to Rule Client!!</h2>
+		<p><a href="viewtopic0905.html">http://unseenstudios.com/community/viewtopic.php?f=5&amp;t=74</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>*Fanfare!*  The Born to Rule Client!!</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Apr 15, 2006 5:09 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Okay, I need your opinion on this.  Should we release the client as-is for download?  Should we let just our friends test it out?
+<br />
+<br />There is no character animation and you can't see your own player.  An even bigger issue is that none of the resources are encrypted.
+<br />
+<br /><!-- m --><a class="postlink" href="http://www.bornunseen.com/btr/code/btrclient_041506v1.zip">http://www.bornunseen.com/btr/code/btrc ... 1506v1.zip</a><!-- m --></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Apr 15, 2006 10:27 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">encryption's a big deal, but I'd worry about fixing it up so that the animations work and it's in 3rd person...also, that list of things I asked for at the meeting.  I think a wall and strafing were the other ones...
+<br />
+<br />I just think that having all that would make it a more complete and worthwhile demo.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Apr 15, 2006 10:41 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">Born to Rule Client - btrdebug - Sat Apr 15 23'40'53 2006.txt
+<br />=============================================================
+<br />Running in windowed mode @ 800 x 600
+<br />Selected server address:  71.236.20.195
+<br />Application using high-performance timer (freq = 3579545)
+<br />F:\Unseen Studios\Born to Rule\Client\btrgraphics.cpp(177): &quot;m_pD3D-&gt;CreateDevice( ...D3DCREATE_HARDWARE_VERTEXPROCESSING... )&quot; hr=D3DERR_INVALIDCALL (0x8876086C)
+<br />F:\Unseen Studios\Born to Rule\Client\btrgraphics.cpp(188): &quot;m_pD3D-&gt;CreateDevice( ...D3DCREATE_SOFTWARE_VERTEXPROCESSING... )&quot; hr=D3DERR_INVALIDCALL (0x8876086C)
+<br />F:\Unseen Studios\Born to Rule\Client\btrclient.cpp(285): &quot;gfx.Open()&quot; hr=D3DERR_INVALIDCALL (0x8876086C)
+<br />
+<br />
+<br />Application exited after 0.75 seconds
+<br />Average FPS:  0.00
+<br />F:\Unseen Studios\Born to Rule\Client\btrclient.cpp(169): &quot;Open()&quot; hr=D3DERR_INVALIDCALL (0x8876086C)
+<br />F:\Unseen Studios\Born to Rule\Client\winmain.cpp(32): &quot;pClient-&gt;Run()&quot; hr=D3DERR_INVALIDCALL (0x8876086C)</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Apr 16, 2006 7:38 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Open up btr.ini
+<br />
+<br />Change this:
+<br />Windowed=1
+<br />
+<br />to this:
+<br />Windowed=0</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Apr 16, 2006 3:00 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">ok, now it works.  it's really slow, and some of the textures (the ground) don't load correctly.  Movement is a crawl, and talk didn't show up (I think that's just because I got impatient and quit, though).  Music works fine.
+<br />
+<br />So it works!  Hallelujah!
+<br />
+<br />The problems need to be worked out, but this is a huge step!  <img src="images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Apr 16, 2006 5:16 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">YAY for slowness!!!!!
+<br />
+<br />Don't worry, I think I can fix the slowness.  We may need to cut down on some graphical stuff; I'll see what I can do about optimization.
+<br />
+<br />Right now I'm working on a map format because I think that's what we need next.  I'll be finishing up this demo probably by/at the next meeting, but I've been beating my head against it for so long that I need a refresher.
+<br />
+<br />Karl</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Apr 16, 2006 8:22 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">yeah <img src="images/smilies/icon_smile.gif" alt=":)" title="Smile" /> time to release and then worry about things?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Apr 18, 2006 6:32 pm</strong></div>
+				<div class="author">by <strong>Matt W.</strong></div>
+				<div class="content">i'd really like to get something out there..but...whatever it is...it should be slightly protected...
+<br />
+<br />so, i'm torn...
+<br />
+<br />I say...get those animations working..and then lets talk</div>
+			</div>
+			<hr />
+			</div>
+
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+	the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+	"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+	forums may be affected.
+
+	The phpBB Group : 2006
+//-->
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 6 hours <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB &copy; 2000, 2002, 2005, 2007 phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=5&t=74&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2015 23:13:09 GMT -->
+</html>

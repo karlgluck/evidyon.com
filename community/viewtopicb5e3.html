@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=32&t=1202&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2015 23:56:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+<title>Unseen Studios &bull; View topic - 1.11 bugs / stuff that needs changing</title>
+
+<link href="styles/prosilver/theme/print.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Unseen Studios</h1>
+		<p>Game Development and More<br /><a href="index.html">http://unseenstudios.com/community/</a></p>
+		
+		<h2>1.11 bugs / stuff that needs changing</h2>
+		<p><a href="viewtopicf5c3.html">http://unseenstudios.com/community/viewtopic.php?f=32&amp;t=1202</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Nov 09, 2008 1:07 pm</strong></div>
+				<div class="author">by <strong>Cagen</strong></div>
+				<div class="content"><span style="text-decoration: underline"><span style="font-weight: bold">New Bugs/Issues</span></span><br /><br /><ul><li>The item properties box lists the last selected item (in the inventory and drop menus) when you reopen them, even if you have no items)</li><li>Chat log could be a tad darker, though still transparent.</li><li>If you scroll through the items listed in the bazaar after buying one (thus changing the list), it displays the details of the item above the one the cursor is hovering over on items that were listed after the one you bought.</li><li>Every time I login/logout (or exit/restart) the game the default system keys get reset: D to drop, S to stats, etc. <span style="color: #FF8000">Is this fixed?</span></li><li>Strange behavior I have been unable to replicate: Took all my equipment off, put it back on all nice and ordered, and then tried to add a second set of Greaves. The Greaves were moved to the bottom of my unequipped items list when they failed to equip (as expected, though it'd be nice if they stayed put), but also, my Shrubbery was removed from my equipped items and also put at the bottom of my unequipped items list.</li></ul><br /><span style="text-decoration: underline"><span style="font-weight: bold">Bugs carried over from 1.10</span></span><br /><br /><ul><li>Delete character does not work.</li><li>Inventory scroll bar does not reset to the top after you close and reopen the inventory window (the actual inventory does however).</li><li>Mace still has no stats, haha.</li><li>Day/Night cycle too quick (should be hourly or bi-hourly) and the transition between night and day has a sudden jump to maximum brightness. It also appears to be client side so everyones is different (not so much a bug but if the time of day in game was going to relate to game play it would be a problem [think opening shrines at midnight on Xen]). <span style="color: #0080FF">The light cycle has been removed temporarily.</span></li><li>/respawn can respawn you off the safety square. (Obviously not being left in the final build so a non issue really)</li><li>Female giants have increased in size causing the gear on them to not display properly, helms and shields are off center.</li></ul><br /><span style="text-decoration: underline"><span style="font-weight: bold">Stuff that needs changing/adding</span></span><br /><br /><ul><li>Your items which are in the Bazaar need to have a darker green colour, it is hard to distinguish between the white and the green.</li><li>Scroll wheel should scroll through inventory.</li><li>Updater should tell the user they have the most up to date client if this is true.</li><li>When in the Drop menu, ESCAPE logs character out instead of exiting the menu.</li><li>Inventory does not remain sorted through login/logout.</li><li>Also, the readme needs to be fixed. Right now it still instructs the player to press enter to bring up the menu. And it might help to begin the filename with an underscore, so that it shows up on the *top* of an alphabetized list, not at the bottom underneath all the debug logs.</li></ul><br /><span style="text-decoration: underline"><span style="font-weight: bold">Bugs/Issues Karl knows about at implementation</span></span><br /><br /><ul><li>Having the player chat log up while bringing up another dialog box doesn't close the chat log</li><li>Player movement is a little fux0red...it seems you move a step or two past where you want to go when you move.</li><li>Monsters spawn in weird areas.  I know how it's happening, but it's not mission critical so I haven't fixed it yet.</li><li>Map allows you to travel outside its boundaries into the &quot;void&quot;</li><li>I think sound got turned off somehow (at least it doesn't play on my computer) <span style="color: #BF0000">Sound is very sporadic, spells seem to have no sound but monsters make occasional attacking sounds.</span></li><li>The stats screen is messed up.  You can't add ability points anymore.  I need to redo that screen completely anyway--it was just thrown together at the last minute many updates ago.</li><li>To see how much gold you have, you have to open the bazaar.  I think this should display in your inventory as well. <span style="color: #BF0000">It should.</span></li></ul><br /><span style="text-decoration: underline"><span style="font-weight: bold">Old bugs which need testing</span></span><br /><br /><ul><li>Aspect ratio not correct for widescreen play. It looks fine i think until i log in to the character. But after i log in i can definatly tell that the resolution is not working properly. I have it set to 1280x800 and fullscreen. But it looks like its just stretching 800x600.</li><li>Once you select a character all the text boxes go blank (this only happens on ONE of my accounts and not the others, it doesn't matter which character I choose from that account they all cause it). If you exit to the account log in screen nothing in functional and there is no text on the screen. Other people have had this happen with different criteria.</li><li>The dynamic lighting doesn't effect animated models.</li></ul></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Nov 09, 2008 5:41 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Thanks for this <img src="images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /><br /><br />About the lighting: have you tried setting f1=1?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 10, 2008 9:10 am</strong></div>
+				<div class="author">by <strong>Cagen</strong></div>
+				<div class="content">Yep but I can't actually tell because you removed the light cycle.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 10, 2008 12:24 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Oh...right!  <img src="images/smilies/icon_razz.gif" alt=":P" title="Razz" /><br /><br />Have you gone looking for skeletons?  If they are not walking around with a missing leg, lighting appears to work on your computer.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 10, 2008 4:19 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">(editing my various comments together into this one ...)<br /><a href="http://www.unseenstudios.com/community/viewtopic.php?f=24&amp;t=1206&amp;start=0&amp;st=0&amp;sk=t&amp;sd=a" class="postlink">Comments/Bugs related to the Bazaar system.</a><br /><br />*  Every time I login/logout (or exit/restart) the game the default system keys get reset:  D to drop, S to stats, &amp;c.<br /><br />*  Inventory does not remain sorted through login/logout.<br /><br />* FPS counter? Is there one, and if not, could you please implement one?<br /><br />*  Also, the readme needs to be fixed. Right now it still instructs the player to press enter to bring up the menu. And it might help to begin the filename with an underscore, so that it shows up on the *top* of an alphabetized list, not at the bottom underneath all the debug logs.<br /><br />*  Strange behavior I have been unable to replicate:  Took all my equipment off, put it back on all nice and ordered, and then tried to add a second set of Greaves.  The Greaves were moved to the bottom of my unequipped items list when they failed to equip (as expected, though it'd be nice if they stayed put), but also, my Shrubbery was removed from my equipped items and also put at the bottom of my unequipped items list.<br /><br />*  The stats screen really <span style="font-weight: bold">is</span> messed up.  I was clicking around re-arranging inventory items, and one of the times I entered the stats screen, I was able to add my level point:</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 10, 2008 7:12 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Haha uh...weird!<br /><br />I think a lot of these problems have to do with how the GUI is set up in code.  Although the GUI core component system is fabulously designed (at the risk of sounding a bit conceited) the system that wraps around it to create a whole menu is something of an abomination.  Here's a brief explanation:<br /><br />The inventory re-sorts when you log out because the ordering of the inventory is entirely managed by your client, and it doesn't save inventory order between sessions.<br /><br />Whenever you click an item to move it from your inventory to equipped (or the reverse), the system marks it as &quot;changed&quot;.  &quot;Changed&quot; items are sorted to the end of the list.  In this way, if you click repeatedly in your inventory it will just cycle through all of the items in your inventory and try to equip them.  This serves a dual purpose:  (1) it makes new items show up at the end of the list, and (2) it prevents you from accidentally clicking an item twice.  Because there is server lag and your inventory isn't updated until the server says it's OK (the client has no notion of what is &quot;allowed&quot; to be equipped), if this didn't happen then you could easily click an item twice and it would equip, then unequip due to this lag.  It's very annoying, so I fixed it using this method.  That's probably more than you wanted to know.<br /><br />FPS counter:  yes it's implemented (FPS is dynamically adjusted) but it isn't displayed.  Why do you want one?<br /><br />The system keys should be fixed as of the latest update--have you downloaded it using the launcher?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 10, 2008 8:37 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">Thanks for the explanation.  Makes sense.  There's still the question of the Shrubbery being unequipped.<br /><br />I would like to see an FPS counter so that I know how changing resolutions, doing a lot of stuff simultaneously, &amp;c. affects how the game runs.  For example, when I set the game to a higher resolution, I notice some difference, but I can't quantify it.<br /><br />I have the latest update, but it isn't helping my system key problem:  every time I log out they reset.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 10, 2008 9:11 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">*  When in the Drop menu, ESCAPE logs character out instead of exiting the menu.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 10, 2008 10:03 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">To assign points, bring up the stat screen, exit, and immediately bring it up again.  That seems to work.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 12, 2008 12:24 am</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content"><blockquote class="uncited"><div>The item properties box lists the last selected item (in the inventory and drop menus) when you reopen them, even if you have no items)</div></blockquote><br />*  Related to this:  In the drop menu, I click an item, and it drops, but the description doesn't refresh until I move my mouse (though the item over which the cursor is hovering is now a different one).<br /><br />Also, these errors showed up in my debug log (don't know if they're important, but I thought you'd like to know ...), <br />The first two lines were repeated many times, the others showed up from time to time:<br /><blockquote class="uncited"><div>.\animatedmeshcontroller.cpp(442): [ERROR]  Invalid animation for this skinned mesh; different number of skeletal frames<br />.\stateworldmain.cpp(779): [INFO]  BLOCK!!!!<br />...<br />.\bazaardisplay.cpp(86): [ERROR]  CONFIRM( owner_-&gt;display_mode_ == BAZAAR_MODE_LISTFORSALE )<br />...<br />.\actors.cpp(439): [WARNING]  Actor 2914 doesn't exist and couldn't be destroyed</div></blockquote></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 12, 2008 6:35 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Those errors should not affect anything.  The animation one is a bit weird, but it doesn't hurt anything.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 12, 2008 9:03 am</strong></div>
+				<div class="author">by <strong>Sankt Pauli</strong></div>
+				<div class="content">Let me correct you, <span style="font-style: italic">female</span> giants have increased in size. I met a female giant who was waaay larger than my male giant. :p</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 12, 2008 10:00 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content"><blockquote><div><cite>Sankt Pauli wrote:</cite>Let me correct you, <span style="font-style: italic">female</span> giants have increased in size. I met a female giant who was waaay larger than my male giant. :p</div></blockquote><br /><br />Haha yeah I noticed that.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 12, 2008 10:34 am</strong></div>
+				<div class="author">by <strong>Sankt Pauli</strong></div>
+				<div class="content">:p<br />I noticed another thing: monsters seem to give less xp. The non-prefix dervali give around 100 xp each, i'm not sure but i remember it being more.<br />Oh, and as news from the dropping front: Body armors drop now like crazy to me, but i haven't found a single shield or helmet (neither newb ones nor better ones).</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 12, 2008 12:38 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">I haven't found any shields or helmets either.  Granted, I'm still hunting mostly trolls, but really?  The crawlers, though, are quite a grab-bag:  found a Bone Cleaver on one yesterday, and every once in a while a Russet Rapier will pop up.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 12, 2008 3:36 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">A strange bug that I experienced a while back.  I figured it was an anomaly or was ironed out with updates, but yesterday I was talking to Doc Holliday in-game and he described the same thing:<br /><br />For no apparent reason, my character suddenly became super-fast. We're talking skittering across the screen faster than the fastest gas. This lasted for a while and made hunting very easy, but then ceased--I can't recall whether it was log-off or death that ended it for me, but for Doc it was log-off.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 12, 2008 7:32 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Well well....that certainly is weird!  Were you able to control your movement, or did it just jerk from place to place?<br /><br />It seems like something overwrote your character's speed--usually, only enchantment spells can do this.  If it happens again, please try to remember what you were doing <img src="images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 12, 2008 8:15 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">I was perfectly in control of my character for the whole time.<br /><br />And I have no idea what I was doing that could have triggered it.  But if it every happens again, I'll let you know.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Nov 13, 2008 8:44 am</strong></div>
+				<div class="author">by <strong>Cagen</strong></div>
+				<div class="content">This happened to me earlier also. I was going into and out of gas fairly rapidly when it occurred, not sure if this is a condition for it though. It ended when I died.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 14, 2008 12:19 am</strong></div>
+				<div class="author">by <strong>Burnt Ferret</strong></div>
+				<div class="content">It was great while it lasted though!  Haha.  Yeah, basically it was just as if you had a huge increase in movement speed, though i saw no increase in attack speed.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Nov 25, 2008 11:56 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">A few things:<br /><br /><span style="text-decoration: underline">Bazaar:</span><br />*  Was able to buy with one character from another character on the same account.  I'm not sure whether we're supposed to be able to do this, but I do know that last time I tried it wouldn't let me.  I did receive the cash.<br />*  Was unable to list more than one item for sale.  Given the numerous problems I've come across trying to sell in the bazaar, a wholesale review might be in order.<br /><br /><span style="text-decoration: underline">Other:</span><br />*  Items boosting max MP all list +0.<br />*  Another animation weirdness:</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 26, 2008 6:38 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Yeah, the bazaar seems to be quite buggy.  After I redo the combat and magic systems, I'll be revamping it to work differently.  Could you give me some ideas on how it might be done better?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 26, 2008 1:23 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">A different layout would be good.  Right now the big irritation is flipping between screens:  after listing an item, you can't tell whether it actually made it to the listing or not unless you flip to the &quot;view sales&quot; list.<br /><br />Other things:<br />*  When you click an item to list, have the price box ready to type, so that a player doesn't have to click it with the mouse first.  The price entry screen could take the righthand box, while leaving the lefthand one to your listed sales.<br /><br />*  Page, don't scroll, through item lists.<br /><br />Layout:</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 26, 2008 1:29 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">(1)  When you first open the Bazaar.<br />(2)  When you click &quot;List for Sale.&quot;<br />(3)  When you click an individual item.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: 1.11 bugs / stuff that needs changing</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 26, 2008 4:57 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Hehehe...I like the paint-ness of it <img src="images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /><br /><br />I like this design a lot more than the current one--but why does the &quot;your own sales&quot; switch sides between (1) and (2),(3) ?<br /><br /><br /><br />Also, another update:  I'm still truckin' along on the magic system, and it's almost to the testing stage!  W00t!!</div>
+			</div>
+			<hr />
+			</div>
+
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+	the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+	"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+	forums may be affected.
+
+	The phpBB Group : 2006
+//-->
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 6 hours <br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB &copy; 2000, 2002, 2005, 2007 phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=32&t=1202&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2015 23:56:10 GMT -->
+</html>

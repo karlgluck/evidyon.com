@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=9&t=506&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2015 00:44:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+<title>Unseen Studios &bull; View topic - Network Game Skeleton - free, well-commented source code!</title>
+
+<link href="./styles/prosilver/theme/print.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Unseen Studios</h1>
+		<p>Game Development and More<br /><a href="http://unseenstudios.com/community/">http://unseenstudios.com/community/</a></p>
+		
+		<h2>Network Game Skeleton - free, well-commented source code!</h2>
+		<p><a href="http://unseenstudios.com/community/viewtopic.php?f=9&amp;t=506">http://unseenstudios.com/community/viewtopic.php?f=9&amp;t=506</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Network Game Skeleton - free, well-commented source code!</h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 27, 2007 3:17 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content"><span style="font-size: 150%; line-height: 116%;"><a href="http://www.unseenstudios.com/ngs/download/ngs_source.zip" class="postlink">Download the Source (6 MB)</a></span>
+<br /><span style="font-size: 150%; line-height: 116%;"><a href="http://www.unseenstudios.com/ngs/documentation/ngs.htm" class="postlink">View the Documentation</a></span>
+<br />
+<br />I dug up some old source code that I had created almost a year ago now, and tweaked it a bit so all of you who want to have a look at a real, working networked 3d application can do so.  This project contains:<ul><li>Fully-functional client</li><li>Fully-functional server (yes, it works over the internet)</li><li>Support for up to 16 players simultaneously (although this is only limited by a #define statement)</li><li>OPTIMIZED, ANIMATED .X MESHES!</li><li>DirectInput keyboard and mouse recognition</li><li>Camera control</li><li>Only ~3500 lines of code</li><li>Simple, funtion-oriented design</li><li>Complete online documentation (also included in download)</li><li>Precompiled demos in the /Bin/ directory</li></ul>
+<br />
+<br />Now, for the disclaimer.  This source doesn't have any kind of chat capability, items, weapons, terrain (other than a flat sheet of grass), etc.  Essentially, it has no content--but the core of the application is there for you to tinker with, and add on to.
+<br />
+<br />Also, you might find that the server code isn't too well documented.  Most of the documentation for this code can be found in the source files itself--I have yet to go through and add comments to all of the function declarations in the headers.
+<br />
+<br />Enjoy!  I'd love to hear from anyone who finds this useful <img src="./images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" />
+<br />
+<br />Karl</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 27, 2007 5:08 pm</strong></div>
+				<div class="author">by <strong>figgles</strong></div>
+				<div class="content">ack.
+<br />
+<br />This sample isn't working for me. It keeps triggering a breakpoint in ntdll.dll (native API DLL).
+<br />
+<br />I ran it through the debugger:
+<br />
+<br />ntdll.dll!7c901230() 	
+<br />d3d9d.dll!_MemState()  + 0xaf bytes	
+<br />d3d9d.dll!_MemFini()  + 0x31 bytes	
+<br />d3d9d.dll!_DllMain@12()  + 0x42d bytes	
+<br />d3d9d.dll!__DllMainCRTStartup@12()  + 0x52 bytes	
+<br />
+<br />Just by look at the DLL backtraces, I can tell you right now that your code is leaking memory. I have seen that backtrace a thousand times. I am not sure whether Direct3D 9's memory leak checker checks only its allocations or the entire CRT heap, but whatever it is, there is some kind of memory leak, and it isn't liking it.
+<br />
+<br />Right now, the client connects to the server them immediately exits, where releasing the Direct3D9 object causes the breakpoint to be triggered.
+<br />
+<br />Leaking Direct3D9 objects can happen for a number of reasons, such as not using Device-&gt;SetTexture(i, NULL) for all passes. SetTexture() with a valid pointer calls AddRef() so calling Release() on the object itself will NOT release the texture. That was a fun one for me to track down.
+<br />
+<br />I  believe the source of the memory leak is in AnimatedMesh::LoadMeshFromX():
+<br />(m_pd3dDevice = pDevice)-&gt;AddRef();
+<br />
+<br />..because the line:
+<br />hr = m_pAllocateHierarchy-&gt;LoadMeshHierarchyFromX(pDevice, strFileName, (D3DXFRAME**)&amp;m_pFrameRoot, &amp;m_pAnimationController);
+<br />
+<br />fails, which calls BasicAllocateHierarchy::LoadMeshHierarchyFromX() and finally this line is executed:
+<br />D3DXLoadMeshHierarchyFromX( strFileName, 0, pDevice, this, NULL, ppFrameHierarchy, ppAnimController );
+<br />
+<br />which returns E_FAIL.
+<br />
+<br />This might be due to an API change in D3DX. I had to rewrite all of my animation code because the X parser interface was removed. So I said fck it and wrote my own crossplatform/API independent X parser/animation library. Much better like that, so so much better.
+<br />
+<br />
+<br />A few other messages I got that you should pay attention to:
+<br />
+<br />Direct3D9: (WARN) :Indexbuffer created with POOL_DEFAULT but WRITEONLY not set. Performance penalty could be severe.
+<br />Direct3D9: (WARN) :Vertexbuffer created with POOL_DEFAULT but WRITEONLY not set. Performance penalty could be severe.
+<br />Direct3D9: (WARN) :Indexbuffer created with POOL_DEFAULT but WRITEONLY not set. Performance penalty could be severe.
+<br />Direct3D9: (WARN) :Vertexbuffer created with POOL_DEFAULT but WRITEONLY not set. Performance penalty could be severe.
+<br />
+<br />D3DPOOL_DEFAULT is volatile (i.e. pure video memory, not backed by system memory), so if you create them and someone Alt+Tab's, and you have no code to handle this, there will be problems. Reading from non-CPU accessable video memory is likely to be slow anyways, and for most purposes (such as animating a character) this memory pool should be write only. For static things such as the terrain, you might consider MANGED pool.
+<br />
+<br />
+<br />Direct3D9: (INFO) :MemFini!
+<br />Direct3D9: (WARN) :Memory still allocated!  Alloc count = 91
+<br />
+<br />There is the official count. You have 91 unfreed allocations. You might want to fix that too =\
+<br />
+<br />
+<br />Overall, I can't say much about the program since all I have had are problems. Hopefully that information will help you. The code itself seems really hacked together and slightly unprofessional -- I know you can do better.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 27, 2007 7:21 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">The POOL_DEFAULT/writeonly warning comes from the internals of the animation code, and doesn't mean anything because those are just temporary buffers anyway.  I'm not sure why D3DXMesh decides to make them this way, because I don't control those buffers.
+<br />
+<br />There is code to handle loss of the device, although much of it is simply managed code.  I'm not sure why D3DXLoadMeshHierarchyFromX would fail--have you checked the file name provided to it?  It should be &quot;tiny/Tiny_skin.dds&quot;  Even when the function fails, I don't get the errors you mentioned.
+<br />
+<br />Yes, this is old code.  Have you recompiled the code on your machine?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 27, 2007 8:58 pm</strong></div>
+				<div class="author">by <strong>figgles</strong></div>
+				<div class="content">Yes, I verified the filename (and all other parameters to the function) while I was running it through the debugger, though it wasn't (and probably shouldn't) be a dds file (sp on your part?), it was some X file in the tiny/ directory. If the filename was wrong, it wouldn't be because I changed it. I did recompile the code, as I couldn't have debugged the executable without the *.pdb files in VC 2005. 
+<br />
+<br />You aren't getting many errors (especially the memory leak ones which you really should pay attention to) because you probably have the D3D error messages turned down/off. You need to install the D3D9 developer debug runtime in order to get them, and drag the slider to increase the verbosity. If you have checked &quot;Break on D3D Error&quot; and &quot;Break on memory leak&quot; too, you will probably catch a lot more errors in your code and get a few grey hairs while you are at it. <img src="./images/smilies/icon_wink.gif" alt=";)" title="Wink" />
+<br />
+<br /><blockquote class="uncited"><div>...from the internals of the animation code...</div></blockquote><br /><blockquote class="uncited"><div>...because I don't control those buffers.</div></blockquote>
+<br />
+<br />*sigh*
+<br />/rant
+<br />The fact that you have that little control over your code is especially painful. D3DX's functions are good when you are first starting to learn D3D9, but some time you really need write your own code. You'll learn a lot more about the subject if you have to go from theory to implementation to realtime implementation. Any D3D9 code I write nowadays is in C, so D3DX isn't even an option. For this sample framework, I suppose it is appropriate, but then again, you would think that anyone examining a multiplayer 3D game framework would be not so much of a beginner.
+<br />
+<br />The problem with D3DX's animation code is that its braindead and needlessly complicated interfaces almost force you to only use D3DXLoadMeshHeirarchyFromX() since to do so otherwise and try to make a different file format work with it would be absolutely hurtful. I wouldn't be surprised if the reason you are having so hard a time getting animations to work with a different file format is because you rely (arguably too much) on D3DX to do the real work for you.
+<br />
+<br />Perhaps I have a not-invented-here syndrome, but then again, I haven't regreted writing my own animation/X parser code after I ran some of my programs on operating systems/processors I didn't even know existed at the time I wrote it.
+<br />/end rant</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Mar 28, 2007 6:27 am</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">Yes, the file should be tiny_4anim.x.  I was looking at the texture file.
+<br />
+<br />Keep in mind that this is free.  I just decided to share some old code with people who might appreciate it.  If you don't, that's fine--just leave it alone.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="./styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Mar 31, 2007 8:56 pm</strong></div>
+				<div class="author">by <strong>Neorift</strong></div>
+				<div class="content">That's actually a pretty cool example.</div>
+			</div>
+			<hr />
+			</div>
+
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+	the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+	"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+	forums may be affected.
+
+	The phpBB Group : 2006
+//-->
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 6 hours <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB &copy; 2000, 2002, 2005, 2007 phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=9&t=506&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Oct 2015 00:44:16 GMT -->
+</html>

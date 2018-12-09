@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=5&t=76&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2015 23:13:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+<title>Unseen Studios &bull; View topic - Unseen Data Format</title>
+
+<link href="styles/prosilver/theme/print.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Unseen Studios</h1>
+		<p>Game Development and More<br /><a href="index.html">http://unseenstudios.com/community/</a></p>
+		
+		<h2>Unseen Data Format</h2>
+		<p><a href="viewtopicd182.html">http://unseenstudios.com/community/viewtopic.php?f=5&amp;t=76</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Unseen Data Format</h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Apr 19, 2006 8:44 pm</strong></div>
+				<div class="author">by <strong>Karl G.</strong></div>
+				<div class="content">I've been working on a kick-bum scripting language to allow us to easily specify any kind of data we could imagine.  Just to jump into things, I'll give you a basic file:
+<br />
+<br /><dl class="codebox"><dt>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code>template Mesh &lt;template id&gt; &#123;<br /><br />&nbsp; &nbsp; // The file from which to load this mesh<br />&nbsp; &nbsp; STRING File;<br />&#125;;<br /><br />// An object specifies an instance of a mesh<br />template Object &lt;template id&gt; &#123;<br /><br />&nbsp; &nbsp; // The mesh that this object uses<br />&nbsp; &nbsp; STRING MeshName;<br /><br />&nbsp; &nbsp; // The object's position<br />&nbsp; &nbsp; FLOAT x, y, z;<br />&#125;;</code></dd></dl><br /><br />This is a very basic template file that defines a &quot;Mesh&quot; type, which specifies a 3d model file, and an &quot;Object&quot; type that can be used to put the mesh in the world at a specific location.  the &quot;&lt;template id&gt;&quot; is something called a global unique identifier (or GUID) and is used by programs to give something a number that will probabalistically be unused by any similar object.<br /><br />For those of you who aren't coders, FLOAT is a data type that represents a decmial number, such as &quot;14.23&quot;.  The &quot;//&quot; means that anything that comes after it on that line is a comment, and doesn't mean anything to the interpreter.<br /><br />Now, let's look at a (very basic) use of these templates:<br /><br /><dl class="codebox"><dt>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code>Mesh treeMesh &#123;<br />&nbsp; &nbsp; &quot;tree04.x&quot;;<br />&#125;;<br /><br />Object treeNumber5 &#123;<br />&nbsp; &nbsp; &quot;treeMesh&quot;;<br />&nbsp; &nbsp; 0; 0; 0;<br />&#125;;</code></dd></dl><br /><br />This code would load the file &quot;tree04.x&quot; and call it &quot;treeMesh&quot;.  Then, an object named &quot;treeNumber5&quot; would be created and placed at the center of the world--coordinates (0,0,0).<br /><br />There are much more complex things that can be done with this definition language.  It's very powerful.  I will be changing how Born to Rule is currently laid out (just moving some code around) so that we can support plugins and maps.  Entire maps can be created using this language--just think about everything you can specify with such a flexible format!  Here is a full list of &quot;native&quot; data types for your viewing pleasure:<br /><br /><dl class="codebox"><dt>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code>word - 2-byte unsigned &#40;only positive&#41; integer<br />dword - 4-byte unsigned &#40;only positive&#41; integer<br />float - 4-byte decimal number<br />double - 8-byte decimal number<br />char - single character, such as 'Q'<br />byte - 1-byte unsigned &#40;only positive&#41; integer<br />short - 2-byte integer<br />long - 4-byte integer<br />string - string of up to 1024 characters, such as &quot;Hello, I really like your purple jeep!&quot;<br />guid - 128-bit integer</code></dd></dl>
+<br />
+<br />
+<br />Aaaaand, for those of you who care, a short feature list:<ul><li>Recursive block-comments (/* ... /* ... */ ... */ is a single comment--it doesn't just stop on the first */)</li><li>C++ style line comments</li><li>Supports multidimensional arrays, including arrays that reference other fields in the template for their sizes</li><li>Ability to reference previously created objects to fill in data positions</li></ul></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3></h3>
+				<div class="date"><img src="styles/prosilver/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Apr 19, 2006 11:44 pm</strong></div>
+				<div class="author">by <strong>Joe M.</strong></div>
+				<div class="content">looks useful.  like c++, without all the hard bits  <img src="images/smilies/icon_razz.gif" alt=":P" title="Razz" /></div>
+			</div>
+			<hr />
+			</div>
+
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+	the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+	"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+	forums may be affected.
+
+	The phpBB Group : 2006
+//-->
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 6 hours <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB &copy; 2000, 2002, 2005, 2007 phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from unseenstudios.com/community/viewtopic.php?f=5&t=76&start=0&sid=65573d350e171b908b90f1864d554f9e&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Oct 2015 23:13:08 GMT -->
+</html>
